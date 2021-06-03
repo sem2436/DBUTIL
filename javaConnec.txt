@@ -1,0 +1,13 @@
+// jDBC url 주소
+String url = "jdbc:mysql://localhost:3306/am?serverTimezone=Asia/Seoul&useOldAliasMetadataBehavior=true&zeroDateTimeBehavior=convertToNull";
+
+// 커넥터 드라이버 활성화
+		String driverName = "com.mysql.cj.jdbc.Driver";
+
+		try {
+			Class.forName(driverName);
+		} catch (ClassNotFoundException e) {
+			System.err.printf("[ClassNotFoundException 예외, %s]\n", e.getMessage());
+			response.getWriter().append("DB 드라이버 클래스 로딩 실패");
+			return;
+		}
